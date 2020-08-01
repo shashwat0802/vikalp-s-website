@@ -31,16 +31,16 @@ body {
 }
 
 /* upload form styles */
-form {
+.input-form form {
   margin: 30px auto 10px;
   text-align: center;
 }
-label input {
+.input-form input {
   height: 0;
   width: 0;
   opacity: 0;
 }
-label {
+.input-form label {
   display: block;
   width: 30px;
   height: 30px;
@@ -52,15 +52,15 @@ label {
   font-weight: bold;
   font-size: 24px;
 }
-label:hover {
+.input-form label:hover {
   background: var(--primary);
   color: white;
 }
-.output {
+.input-form .output {
   height: 60px;
   font-size: 0.8rem;
 }
-.error {
+.input-form .error {
   color: var(--error);
 }
 
@@ -113,4 +113,26 @@ label:hover {
   margin: 60px auto;
   box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.5);
   border: 3px solid white;
+}
+
+/* SignIn form styles */
+.SignIn-wrapper {
+  max-width: 500px;
+  margin: 100px auto;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.SignIn-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.SignIn-form input {
+  margin: 15px 5px;
+  padding: 12px;
+  width: 200px;
 }

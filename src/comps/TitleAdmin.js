@@ -1,24 +1,26 @@
 import React from "react"
 import { Link } from "react-router-dom"
+// import { auth } from "../firebase/config"
 
-const Title = () => {
+const TitleAdmin = () => {
   const linkStyle = {
+    textDecoration: "none",
+    color: "rgba(0,0,0,0.5)",
     position: "absolute",
     right: "0",
-    padding: "12px",
-    margin: "0 10px",
+    padding: "5px",
+    margin: "0 15px",
     border: "1px solid #d3d3d3",
-    color: "rgba(0,0,0,0.5)",
     borderRadius: "5px",
-    textDecoration: "none",
   }
+
   return (
     <div className="title">
-      <Link to="/signIn" style={linkStyle}>
-        admin
+      <Link to="/" style={linkStyle}>
+        logout
       </Link>
       <h1>Vikalp Kumar</h1>
-      <h2>My Pictures</h2>
+      <h2>Add Pictures</h2>
       <p>Visual Stories</p>
       <p>
         welcome to my uncluttered,uncollected and chaotic world of random
@@ -28,4 +30,4 @@ const Title = () => {
   )
 }
 
-export default Title
+export default TitleAdmin

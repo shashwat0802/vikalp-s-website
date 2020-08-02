@@ -1,14 +1,17 @@
 import React from "react"
 // import { auth } from "../../firebase/config"
+// import { useHistory } from "react-router-dom"
 
 const AdminSignIn = () => {
+  // const history = useHistory()
+
   const handleSubmit = (e) => {
     e.preventDefault()
     const SignIn = document.querySelector("#SignIn")
     const pass = SignIn["password"].value
     const email = SignIn["email"].value
-    console.log(email)
     console.log(pass)
+    console.log(email)
   }
 
   return (

@@ -6,6 +6,7 @@ import ImageGrid from "./comps/ImageGrid"
 import Modal from "./comps/Modal"
 import AdminPage from "./comps/pages/AdminPage"
 import AdminSignIn from "./comps/pages/AdminSignIn"
+// import { auth } from "./firebase/config"
 
 function App() {
   const [selectedImg, setSelectedImg] = useState(null)

@@ -1,8 +1,11 @@
 import React from "react"
 import { Link } from "react-router-dom"
-// import { auth } from "../firebase/config"
+
+import { useHistory } from "react-router-dom"
 
 const TitleAdmin = () => {
+  const history = useHistory()
+
   const linkStyle = {
     textDecoration: "none",
     color: "rgba(0,0,0,0.5)",
@@ -14,9 +17,13 @@ const TitleAdmin = () => {
     borderRadius: "5px",
   }
 
+  const handleSignOut = () => {
+    history.push("/")
+  }
+
   return (
     <div className="title">
-      <Link to="/" style={linkStyle}>
+      <Link to="/" style={linkStyle} onClick={handleSignOut}>
         logout
       </Link>
       <h1>Vikalp Kumar</h1>

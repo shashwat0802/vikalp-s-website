@@ -11,7 +11,7 @@ const ProtectedRoute = ({ component: Component, ...rest }) => {
         if (!!currentUser) {
           return <Component {...props} />
         } else {
-          return <Redirect to={"/signIn"} />
+          return <Redirect to="/signIn" />
         }
       }}
     />

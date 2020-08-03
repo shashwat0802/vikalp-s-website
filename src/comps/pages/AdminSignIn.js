@@ -1,17 +1,28 @@
-import React from "react"
-// import { auth } from "../../firebase/config"
-// import { useHistory } from "react-router-dom"
+import React, { useCallback, useContext } from "react"
+import { auth } from "../../firebase/config"
+import { Redirect } from "react-router-dom"
+import { AuthContext } from "../context/AuthProvider"
 
-const AdminSignIn = () => {
-  // const history = useHistory()
+const AdminSignIn = ({ history }) => {
+  const handleSubmit = useCallback(
+    async (e) => {
+      e.preventDefault()
+      const SignIn = document.querySelector("#SignIn")
+      const pass = SignIn["password"].value
+      const email = SignIn["email"].value
+      try {
+        await auth.signInWithEmailAndPassword(email, pass)
+        history.push("/admin")
+      } catch (error) {
+        console.log(error)
+      }
+    },
+    [history]
+  )
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    const SignIn = document.querySelector("#SignIn")
-    const pass = SignIn["password"].value
-    const email = SignIn["email"].value
-    console.log(pass)
-    console.log(email)
+  const { currentUser } = useContext(AuthContext)
+  if (currentUser) {
+    return <Redirect to="/admin" />
   }
 
   return (

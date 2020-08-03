@@ -6,6 +6,7 @@ import ImageGrid from "./comps/ImageGrid"
 import Modal from "./comps/Modal"
 import AdminPage from "./comps/pages/AdminPage"
 import AdminSignIn from "./comps/pages/AdminSignIn"
+import ProtectedRoute from "./comps/ProtectedRoute"
 // import { auth } from "./firebase/config"
 
 function App() {
@@ -33,7 +34,7 @@ function App() {
           />
 
           <Route exact path="/signIn" component={AdminSignIn} />
-          <Route exact path="/admin" component={AdminPage} />
+          <ProtectedRoute exact path="/admin" component={AdminPage} />
         </Router>
       </AuthProvider>
     </div>

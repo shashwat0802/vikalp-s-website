@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { BrowserRouter as Router, Route } from "react-router-dom"
 import Title from "./comps/Title"
-
+import AuthProvider from "./comps/context/AuthProvider"
 import ImageGrid from "./comps/ImageGrid"
 import Modal from "./comps/Modal"
 import AdminPage from "./comps/pages/AdminPage"
@@ -12,29 +12,31 @@ function App() {
   const [selectedImg, setSelectedImg] = useState(null)
 
   return (
-    <Router>
-      <div className="App">
-        <Route
-          exact
-          path="/"
-          render={(props) => (
-            <React.Fragment>
-              <Title />
-              <ImageGrid setSelectedImg={setSelectedImg} />
-              {selectedImg && (
-                <Modal
-                  selectedImg={selectedImg}
-                  setSelectedImg={setSelectedImg}
-                />
-              )}
-            </React.Fragment>
-          )}
-        />
+    <div className="App">
+      <AuthProvider>
+        <Router>
+          <Route
+            exact
+            path="/"
+            render={(props) => (
+              <React.Fragment>
+                <Title />
+                <ImageGrid setSelectedImg={setSelectedImg} />
+                {selectedImg && (
+                  <Modal
+                    selectedImg={selectedImg}
+                    setSelectedImg={setSelectedImg}
+                  />
+                )}
+              </React.Fragment>
+            )}
+          />
 
-        <Route exact path="/signIn" component={AdminSignIn} />
-        <Route exact path="/admin" component={AdminPage} />
-      </div>
-    </Router>
+          <Route exact path="/signIn" component={AdminSignIn} />
+          <Route exact path="/admin" component={AdminPage} />
+        </Router>
+      </AuthProvider>
+    </div>
   )
 }
 

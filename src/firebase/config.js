@@ -4,14 +4,13 @@ import "firebase/firestore"
 import "firebase/auth"
 
 var firebaseConfig = {
-  apiKey: "AIzaSyAfAw7Xnh8yKx4v_aur36GJaAhGBlCMMUY",
-  authDomain: "vikalp-website.firebaseapp.com",
-  databaseURL: "https://vikalp-website.firebaseio.com",
-  projectId: "vikalp-website",
-  storageBucket: "vikalp-website.appspot.com",
-  messagingSenderId: "983519870122",
-  appId: "1:983519870122:web:6db3abbeae5e5971d2a4d3",
-  measurementId: "G-FH5LRK8JBE",
+  apiKey: "AIzaSyBO8Gd1FAQHUzyIv6RIGoGdtsxtx00A_CE",
+  authDomain: "photo-website-52184.firebaseapp.com",
+  databaseURL: "https://photo-website-52184.firebaseio.com",
+  projectId: "photo-website-52184",
+  storageBucket: "photo-website-52184.appspot.com",
+  messagingSenderId: "102989316981",
+  appId: "1:102989316981:web:0e1d8a4bf01229ae83c93c",
 }
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig)
